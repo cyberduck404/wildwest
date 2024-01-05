@@ -46,3 +46,7 @@ def main():
         os.popen(cmd).read()
         # logging.info(f'[{domain}] dnstaker executing')
         # cmd = f"dnstaker -l {storage_sub_batch}/{domain}"
+
+
+if __name__ == '__main__':
+    main()
