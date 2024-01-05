@@ -6,7 +6,7 @@ import logging
 
 storage_dir = os.path.expanduser('~/.wildwest')
 domain_list = 'data/opendns-top-domains.txt'
-resolver_file = 'configs/resolvers.txt'
+resolver_file = 'data/resolvers.txt'
 subfinder_config = 'configs/provider-config.yaml'
 
 p = argparse.ArgumentParser(description='Assets Monitor')
