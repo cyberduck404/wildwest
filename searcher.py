@@ -39,6 +39,7 @@ def main():
             if not domain:
                 continue
             domains.append(domain)
+    domains = sorted(domains)
 
     for domain in domains:
         logging.info(f'[{domain}] subdomain discovering')
