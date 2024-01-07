@@ -46,8 +46,9 @@ def main():
         cmd = f"subfinder -silent -d {domain} -t {args.threads} -rL {resolver_file} -config {subfinder_config} > {storage_sub_batch}/{domain}.txt"
         os.popen(cmd).read()
         logging.info(f'[{domain}] dnstaker executing')
-        cmd = f"dnstaker -s -l {storage_sub_batch}/{domain}.txt"
-        os.popen(cmd).read()
+        cmd = f"dnstaker -silent -l {storage_sub_batch}/{domain}.txt"
+        x = os.popen(cmd).read()
+        sys.stdout.write(x + '\n')
 
 
 if __name__ == '__main__':
