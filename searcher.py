@@ -42,10 +42,9 @@ def main():
     domains = sorted(domains)
 
     for domain in domains:
-        logging.info(f'[{domain}] subdomain discovering')
+        logging.info(f'[{domain}] attacking')
         cmd = f"subfinder -silent -d {domain} -t {args.threads} -rL {resolver_file} -config {subfinder_config} > {storage_sub_batch}/{domain}.txt"
         os.popen(cmd).read()
-        logging.info(f'[{domain}] dnstaker executing')
         cmd = f"dnstaker -silent -l {storage_sub_batch}/{domain}.txt"
         x = os.popen(cmd).read()
         sys.stdout.write(x + '\n')
